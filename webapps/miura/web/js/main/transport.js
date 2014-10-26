@@ -2,7 +2,6 @@
 
 function callServer( type,  url,  data ){
 
-	alert('inside transaport');
 
  jQuery.ajax({
          type: type,
@@ -12,12 +11,13 @@ function callServer( type,  url,  data ){
          dataType: "json",
          success: function (data, status, jqXHR) {
               // do something
-              alert ('call to server succeeded')
+              log('call to server succeeded');
          },
     
          error: function (jqXHR, status) {           
               // error handler
-               alert ('call to server did not succeed')
+               log('call to server did not succeed, Status : '+status+ ' Error Message : '+jqXHR.responseText);
+
 
          }
 
