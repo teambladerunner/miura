@@ -1,13 +1,12 @@
 jQuery(function($) {'use strict',
-
 	$('#profileSettingsSubmit').click(function(event) {
 		//alert('Start');
-		//var data = JSON.stringify(jQuery('#registrationForm').serializeArray())
+		var data = JSON.stringify(jQuery('#registrationForm').serializeArray())
 		//var user = new Object();
 		//user.name = "Jesper";
 		//var data=JSON.stringify(user);
-		var data=JSON.stringify({name: "Mozilla"});
-		callServer("PUT","http://10.240.240.113:9000/user",data,function () {populateForm1(data)})
+		//var data=JSON.stringify({name: "Mozilla"});
+		callServer("PUT","http://192.168.1.5:9000/user",data,function () {populateForm1(data)})
 		//alert('End');
 	});	
 
@@ -18,30 +17,15 @@ jQuery(function($) {'use strict',
 		loadBundles(SESSION.locale);
 	});
 
+var a = [{"name":"first_name","value":"aaa"},{"name":"last_name","value":"aa"},{"name":"email","value":"a"},{"name":"password","value":"aa"},{"name":"password2","value":"a"},{"name":"locale","value":"en_us"}];
+populateForm(a);
 
-	function populateForm1(data) {
-		log("Populate Form");
-    
-    }
 
-	function populateForm (data) {
-  		$.each(data, function(name, val){
-   			 var $el = $('[name="'+name+'"]'),
-       		 type = $el.attr('type');
 
-		    switch(type){
-		        case 'checkbox':
-		            $el.attr('checked', 'checked');
-		            break;
-		        case 'radio':
-		            $el.filter('[value="'+val+'"]').attr('checked', 'checked');
-		            break;
-		        default:
-		            $el.val(val);
-    		}
-		});
-    
-    }
+
+
+
+
 
 
 });

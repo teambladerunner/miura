@@ -22,6 +22,40 @@ function loadBundles(lang) {
 	});
 }
 
+function populateForm (data) {
+
+	 		$.each(data, function(name, val){
+   			 //var $el = $('[name="'+name+'"]'),
+       		 var $el = $('[name="'+val.name+'"]'),
+
+       		 type =  $el.attr('type');
+
+		    switch(type){
+		        case 'checkbox':
+		            $el.attr('checked', 'checked');
+		            break;
+		        case 'radio':
+		            $el.filter('[value="'+val+'"]').attr('checked', 'checked');
+		            break;
+		        default:
+		            $el.val(val.value);
+    		}
+		});
+
+    }
+
+function populateForm1(data) {
+    log("Populate Form");
+
+
+    var a,b;
+    for (i = 0, len = data.length, text = ""; i < len; i++) {
+        a = data[i] ;
+        b=data[i];
+    }
+
+}
+
 function prefLocalization(){
 	$("#lfirst_name").text($.i18n.prop('lfirst_name'));
 	$("#llast_name").text($.i18n.prop('llast_name'));
