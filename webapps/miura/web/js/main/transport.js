@@ -10,19 +10,26 @@ jQuery.support.cors = true;
          data: data,
          contentType: "application/json",
          dataType: "json",
+         //headers: {'authid': 'k@d'},
          beforeSend : function (jqXHR, opts){
-              console.log("Before Sending");
+
+             var authid = SESSION.authID;
+             jqXHR.setRequestHeader("authid", authid);
+             console.log("Before Sending");
          },
-         success: function (data, status, jqXHR) {
+         success: function (dataReturned, status, jqXHR) {
               // do something
+              SESSION.response = dataReturned;
               log('call to server succeeded');
-              functionSuccess(data);
+
+            //  var ret = JSON.parse(dataReturned);
+              functionSuccess();
          },
          error: function (jqXHR, status, errorThrown) {           
               // error handler
               log('call to server did not succeed, Status : '+status+ ' Error Message : '+jqXHR.responseText+' Error Thrown : '+errorThrown);
          },
-         timeout: 1000,
+         timeout: 3000,
          crossDomain: true 
 
      });

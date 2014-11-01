@@ -7,6 +7,16 @@ var DEBUG = {
 
 var SESSION = {
    locale:false,
-   other:false
+   authID : "k@d",
+   other:false,
+   response : null
+}
+
+var URL = {
+   putPrefs:"http://blrublp136:9000/Miura/user",
+   getPrefs:"http://blrublp136:9000/Miura/user/profile",
+   putPort:"http://blrublp136:9000/Miura/user",
+   getPort:"http://blrublp136:9000/Miura/user/profile"
+
 }
 

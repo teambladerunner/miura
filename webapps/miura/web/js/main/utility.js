@@ -22,8 +22,8 @@ function loadBundles(lang) {
 	});
 }
 
-function populateForm (data) {
-
+function populateForm () {
+		var data= SESSION.response;
 	 		$.each(data, function(name, val){
    			 //var $el = $('[name="'+name+'"]'),
        		 var $el = $('[name="'+val.name+'"]'),
@@ -67,3 +67,19 @@ function prefLocalization(){
 	$("#lpassword2").text($.i18n.prop('lpassword2'));		
 	$("#llocale").text($.i18n.prop('llocale'));
 }
+
+
+function setCookie(data){
+	var cookieStr = JSON.stringify(data);
+	$.cookie(data.authid, cookieStr);
+
+}
+
+function getCookie(authid){
+	var cookieDataStr = $.cookie(authid);
+	var cookieData = JSON.$.parseJSON(cookieDataStr);
+	return cookieData;
+}
+
+
+

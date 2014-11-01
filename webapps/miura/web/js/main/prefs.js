@@ -6,7 +6,7 @@ jQuery(function($) {'use strict',
 		//user.name = "Jesper";
 		//var data=JSON.stringify(user);
 		//var data=JSON.stringify({name: "Mozilla"});
-		callServer("PUT","http://192.168.1.5:9000/user",data,function () {populateForm1(data)})
+		callServer("PUT",URL.putPrefs,data,function () {populateForm(data)})
 		//alert('End');
 	});	
 
@@ -17,13 +17,17 @@ jQuery(function($) {'use strict',
 		loadBundles(SESSION.locale);
 	});
 
-var a = [{"name":"first_name","value":"aaa"},{"name":"last_name","value":"aa"},{"name":"email","value":"a"},{"name":"password","value":"aa"},{"name":"password2","value":"a"},{"name":"locale","value":"en_us"}];
-populateForm(a);
+//var a = [{"name":"first_name","value":"aaa"},{"name":"last_name","value":"aa"},{"name":"email","value":"a"},{"name":"password","value":"aa"},{"name":"password2","value":"a"},{"name":"locale","value":"en_us"}];
+//populateForm(a);
 
 
 
+function loadPrefs(){
+	var data={};
+	callServer("GET",URL.getPrefs,data,function () {populateForm(data)})
+}
 
-
+ loadPrefs();
 
 
 
