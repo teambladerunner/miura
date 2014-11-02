@@ -12,7 +12,7 @@ function log(message){
 function loadBundles(lang) {
 	jQuery.i18n.properties({
 	    name:'Messages', 
-	    path:'../../miura/conf/', 
+	    path:'../../miura/web/conf/',
 	    mode:'both',
 	    language:lang, 
 	    callback: function() {

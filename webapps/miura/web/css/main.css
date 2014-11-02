@@ -6,6 +6,7 @@
 **************************/
 
 body {
+//background:url('../images/bull.jpg')no-repeat;
   background: #fff;
   font-family: 'Open Sans', sans-serif;
   color:#4e4e4e;
@@ -534,7 +535,9 @@ input.search-form:hover {
 }
 
 #feature {
-  background: #f2f2f2;
+background:url('../images/bull.jpg')no-repeat;
+background-size:100% auto;
+ /* background: #f2f2f2;*/
   padding-bottom: 40px;
 }
 
@@ -2524,6 +2527,7 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
+
 
 
 
