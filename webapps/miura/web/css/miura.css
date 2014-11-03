@@ -16,3 +16,15 @@ th {
     background-color: SteelBlue;
     color: white;
 }
+
+.trade-content{
+    background-image: url('../images/quants.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+ .ui-autocomplete {
+		max-height: 100px;
+		overflow: hidden; }
