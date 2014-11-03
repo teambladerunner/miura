@@ -1,6 +1,7 @@
 //common includes stuff
 document.writeln("<script src='/miura/web/js/jquery.i18n.properties.js' type='text/javascript'></script>");
 document.writeln("<script src='/miura/web/js/jquery.cookie.js' type='text/javascript'></script>");
+document.writeln("<script src='/miura/web/js/typeahead.bundle.js' type='text/javascript'></script>");
 
 document.writeln("<script src='/miura/web/js/main/constants.js' type='text/javascript'></script>");
 document.writeln("<script src='/miura/web/js/main/dashboard.js' type='text/javascript'></script>");
