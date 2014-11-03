@@ -12,6 +12,8 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.theme.css" rel="stylesheet">
     <link href="css/miura.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -129,15 +131,17 @@
                             <table class="table table-hover table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Company</th>
+                                    <th>Quote ID</th>
                                     <th>Qty</th>
                                     <th>Buy Price</th>
                                     <th>Total Purchase Price</th>
+                                    <th>Current Market Price</th>
                                     <th>Current Market Value</th>
                                     <th>Realised P&L (amt)</th>
                                     <th>Realised P&L (%)</th>
-                                    <th>Unrealised P&L (amt)</th>
-                                    <th>Unrealised P&L (%)</th>
+                                    <!--
+                                    <th>Portfolio Returns (amt)</th>
+                                    <th>Portfolio Returns (%)</th>-->
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -149,9 +153,11 @@
                                     <td>200</td>
                                     <td>300</td>
                                     <td>200</td>
+                                    <td>20</td>
                                     <td>2%</td>
+                                    <!--
                                     <td>100</td>
-                                    <td>1%</td>
+                                    <td>1%</td>-->
                                     <td>
                                         <button type="button" class="btn btn-danger">Sell</button>
                                     </td>

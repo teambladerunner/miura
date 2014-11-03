@@ -41,7 +41,8 @@ jQuery(function($) {'use strict',
         };
     };
 
-    var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+    var states = [
+    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
     'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
     'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
     'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
@@ -52,7 +53,11 @@ jQuery(function($) {'use strict',
     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
     ];
 
-    $('#search .typeahead').typeahead({
+      $( "#search2" ).autocomplete({
+     source: STOCK_SYMBOLS
+     });
+
+    $('#search1 .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
@@ -65,15 +70,93 @@ jQuery(function($) {'use strict',
 
 
 
-function loadSearch(){
-	//var data={};
-	//callServer("GET",URL.getPrefs,data,function () {populateForm(data)})
-}
+    function populateSearchForm(data){
+        var data= SESSION.response;
 
- //loadSearch();
+        $("#current").val(data.stock_summary.current_price);
+        $("#open").val(data.stock_summary.open_price);
+        $("#close").val(data.stock_summary.open_price);
+        $("#marketCap").val(data.stock_summary.market_cap);
+        $("#currentChangeAmt").val(data.stock_summary.day_change_amount);
+        $("#currentChangePercent").val(data.stock_summary.day_change_percent);
+
+        $("#trend1").val(data.stock_sentiment.probability.neg);
+        $("#trend2").val( data.stock_sentiment.probability.neutral);
+        $("#trend3").val( data.stock_sentiment.probability.pos);
+        data.stock_sentiment.neutral;
+    }
 
 
+    function loadSearch(){
+        showChart();
+        var data={};
+        var quoteID = SESSION.search;
+        callServer("GET",URL.getSearch+quoteID,data,function () {populateSearchForm(data)})
+    }
 
+    loadSearch();
 
 });
+
+        function showChart () {
+
+
+  			if(typeof(EventSource) !== "undefined") {
+  				var source = new EventSource("http://blrublp136:9000/Miura/sse");
+  				source.onmessage = function(event) {
+  					var obj = JSON.parse(event.data);
+  					if(obj.type === "stockupdate" && obj.symbol === "GOOGL"){
+  						update(parseFloat(obj.price, 10));
+  					}
+  				};
+  			} else {
+  				document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+  			}
+
+  			}
+
+              var ypt = [], totalPoints = 25;
+
+              function initData() {
+                  for (var i = 0; i < totalPoints; ++i)
+                      ypt.push(0);
+                  return getPoints();
+
+              }
+              function getData(data) {
+                  if (ypt.length > 0)
+                      ypt = ypt.slice(1);
+                  ypt.push(data);
+                  return getPoints();
+              }
+              function getPoints() {
+                  var ret = [];
+                  for (var i = 0; i < ypt.length; ++i)
+                      ret.push([i, ypt[i]]);
+                  return ret;
+              }
+
+              // setup plot
+              var options = {
+                  series: { shadowSize: 0, bars: {
+                      show: true,
+                      barWidth: 0.75,
+                      fill: 1
+                  }
+                  }, // drawing is faster without shadows
+                  yaxis: { min: 0, max: 1000,
+                      tickFormatter: function (val, axis) {
+                          return '$' + val;
+                      }
+                  },
+                  xaxis: { show: false }
+              };
+
+              var plot = $.plot($("#placeholder"), [initData()], options);
+              function update(data) {
+                  $('#priceHolder').text('$' + data);
+                  plot.setData([getData(data)]);
+                  plot.draw();
+              }
+
 

@@ -6,6 +6,12 @@ background:url('../images/bull.jpg')no-repeat;
 }*/
 
 
+
+.list-group-item {
+    background-color: SteelBlue;
+    color: white;
+}
+
 th {
     background-color: SteelBlue;
     color: white;

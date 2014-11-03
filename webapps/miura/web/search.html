@@ -14,6 +14,9 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.theme.css" rel="stylesheet">
+    <link href="css/miura.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -61,8 +64,9 @@
                         </ul>
                         <div class="search">
                             <form role="form">
-                                <input type="text" class="typeahead" autocomplete="off" placeholder="Search" id="search">
-                                <i class="fa fa-search"></i>
+                                <div id="search1">
+                                <input type="text" class="search-form" autocomplete="off" placeholder="Search" id="search2">
+                                <i class="fa fa-search"></i></div>
                             </form>
                         </div>
                     </div>
@@ -112,279 +116,58 @@
 
 <!--/gmap_area -->
 
-<section id="contact-page">
-<div class="container">
-<div class="row">
-    <div class="col-sm-10"><h1>Joeuser</h1></div>
-    <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image"
-                                                                   class="img-circle img-responsive"
-                                                                   src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a>
-    </div>
-</div>
-<div class="row">
-<div class="col-sm-3"><!--left col-->
+<section id="searchsection">
+<div class="container"></br></br></br>
 
+<div class="row">
+<div class="col-sm-4"><!--left col-->
     <ul class="list-group">
-        <li class="list-group-item text-muted">Profile</li>
-        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014</li>
-        <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li>
-        <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Joseph Doe</li>
+        <li class="list-group-item text-muted">Stock Summary</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Open</strong></span><input id="open" type="number" placeholder="2" readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Close Prev</strong></span><input id="close" type="number" placeholder="2" readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Market Cap</strong></span><input id="marketCap" type="number" placeholder="2" readonly="true"></input></li>
+       <!-- <li class="list-group-item text-right"><span class="pull-left"><strong>Volume</strong></span><input id="volume" type="number" placeholder="2" readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>P/E</strong></span><input id="pe" type="number" placeholder="2" readonly="true"></input></li>-->
+     </ul>
+</div>
+<div class="col-sm-4"><!--left col-->
+    <ul class="list-group">
+        <li class="list-group-item text-muted">Real Time Stock Details</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Real Time Quote</strong></span><input id="current" type="number" placeholder="2" readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Day Changes(%)</strong></span><input id="currentChangePercent" type="number" placeholder="2" readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Day Changes(amt)</strong></span><input id="currentChangeAmt" type="number" placeholder="2" readonly="true"></input></li>
+   </ul>
+</div>
+<div class="col-sm-4"><!--left col-->
+    <ul class="list-group">
+        <li class="list-group-item text-muted">Twitter Trends</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Trend1</strong></span><input id="trend1" type="text" placeholder="Trends..." readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Trend2</strong></span><input id="trend2" type="text" placeholder="Trends..." readonly="true"></input></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Trend3</strong></span><input id="trend3" type="text" placeholder="Trends..." readonly="true"></input></li>
 
     </ul>
-
-    <!--
-     <ul class="list-group">
-       <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-       <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-       <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-       <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-       <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
-     </ul>
-
-     <div class="panel panel-default">
-       <div class="panel-heading">Social Media</div>
-       <div class="panel-body">
-           <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-       </div>
-     </div>-->
-
 </div>
-<!--/col-3-->
-<div class="col-sm-9">
+</div>
 
-<ul class="nav nav-tabs" id="myTab">
-    <!-- <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-     <li><a href="#messages" data-toggle="tab">Messages</a></li>-->
-    <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
-</ul>
 
-<div class="tab-content">
-<div class="tab-pane" id="home">
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Label 1</th>
-                <th>Label 2</th>
-                <th>Label 3</th>
-                <th>Label</th>
-                <th>Label</th>
-                <th>Label</th>
-            </tr>
-            </thead>
-            <tbody id="items">
-            <tr>
-                <td>1</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-center">
-                <ul class="pagination" id="myPager"></ul>
+<div class="row">
+    <div class="col-sm-4"><!--left col-->
+        <div style="text-align: center">
+            <h1>
+                Trade Price: <span id="priceHolder"></span>
+            </h1>
+            <div id="placeholder" style="width:500px; height: 300px; margin: 0 auto">
             </div>
+            <div id="result"></div>
         </div>
+
+        <ul class="list-group">
+            <li class="list-group-item text-muted">Stock Chart</li>
+
+        </ul>
     </div>
-    <!--/table-resp-->
-
-    <hr>
-
-
-</div>
-<!--/tab-pane-->
-
-<div class="tab-pane active" id="settings">
-
-
-    <hr>
-    <form class="form" action="##" method="post" id="registrationForm">
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="first_name" id="lfirst_name"><h4>First name</h4></label>
-                <input class="form-control" name="first_name" id="first_name" placeholder="first name"
-                       title="enter your first name if any." type="text">
-            </div>
-        </div>
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="last_name" id="llast_name"><h4>Last name</h4></label>
-                <input class="form-control" name="last_name" id="last_name" placeholder="last name"
-                       title="enter your last name if any." type="text">
-            </div>
-        </div>
-        <!--
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="phone" id="lphone1"><h4>Phone</h4></label>
-                <input class="form-control" name="phone" id="phone" placeholder="enter phone"
-                       title="enter your phone number if any." type="text">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-xs-6">
-                <label for="mobile" id="lmobile"><h4>Mobile</h4></label>
-                <input class="form-control" name="mobile" id="mobile" placeholder="enter mobile number"
-                       title="enter your mobile number if any." type="text">
-            </div>
-        </div>
-        -->
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="email" id="lemail"><h4>Email</h4></label>
-                <input class="form-control" name="email" id="email" placeholder="you@email.com"
-                       title="enter your email." type="email">
-            </div>
-        </div>
-        <!--
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="email" id="llocation"><h4>Location</h4></label>
-                <input class="form-control" id="location" placeholder="somewhere" title="enter a location" type="email">
-            </div>
-        </div>-->
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="password" id="lpassword"><h4>Password</h4></label>
-                <input class="form-control" name="password" id="password" placeholder="password"
-                       title="enter your password." type="password">
-            </div>
-        </div>
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="password2" id="lpassword2"><h4>Verify</h4></label>
-                <input class="form-control" name="password2" id="password2" placeholder="password2"
-                       title="enter your password2." type="password">
-            </div>
-        </div>
-
-        <div class="form-group">
-
-            <div class="col-xs-6">
-                <label for="locale" id="llocale">Locale</label>
-                <select class="form-control" name="locale" id="locale" placeholder="locale">
-                    <option value="en_us">English US</option>
-                    <option value="en_uk">English UK</option>
-                </select>
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <div class="col-xs-12">
-                <br>
-                <!-- <button class="btn btn-lg btn-success" type="submit" id="profileSettingsSubmit1"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>-->
-                <button class="btn btn-lg btn-success" type="button" id="profileSettingsSubmit"><i
-                        class="glyphicon glyphicon-ok-sign"></i> Save
-                </button>
-                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-            </div>
-        </div>
-    </form>
 </div>
 
-</div>
-<!--/tab-pane-->
-</div>
-<!--/tab-content-->
-
-</div>
-<!--/col-9-->
 </div>
 <!--/.container-->
 </section>
@@ -419,6 +202,8 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/jquery.isotope.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.flot.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/main/includes.js"></script>
 <script src="js/main/search.js"></script>
