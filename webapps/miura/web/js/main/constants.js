@@ -24,7 +24,7 @@ var URL = {
    getPrefs:"http://blrublp136:9000/Miura/user/profile",
    putPort:"http://blrublp136:9000/Miura/user",
    getPort:"http://blrublp136:9000/Miura/user/portfolio",
-   getSearch:"http://blrublp136:9000/Miura/stocks/search/"
+   getSearch:"http://blrublp136:9000/Miura/stocks/search/",
    getTrade:"http://blrublp136:9000/Miura/stocks/search/"
 
 }
