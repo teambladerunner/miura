@@ -21,10 +21,11 @@ jQuery(function($) {'use strict',
     //populateForm(a);
 
     function populatePortfolio(data){
-        data=SESSION.response;
+        var data1=SESSION.response;
+        data= data1.stocks;
         var table = $("#items");
             $.each(data, function(idx, elem){
-                table.append("<tr><td>"+elem.symbol+"</td><td>"+elem.totalUnits+"</td><td>"+elem.averageInvestedPrice+"</td><<td>"+elem.totalPurchasePrice+"</td><td>"+elem.currentMarketPrice+"</td><td>"+elem.currMarketValue+"</td><td>"+elem.realizedProfitAmount+"</td><td>"+elem.realizedProfitPercentage+"</td><td>"+createSellButton(elem.symbol,elem.totalUnits,elem.currentMarketPrice)+"</td></tr>");
+                table.append("<tr class='portfoliotabletr'><td>"+elem.symbol+"</td><td>"+elem.totalUnits+"</td><td>"+elem.averageInvestedPrice+"</td><<td>"+elem.totalPurchasePrice+"</td><td>"+elem.currentMarketPrice+"</td><td>"+elem.currMarketValue+"</td><td>"+elem.realizedProfitAmount+"</td><td>"+elem.realizedProfitPercentage+"</td><td>"+createSellButton(elem.symbol,elem.totalUnits,elem.currentMarketPrice)+"</td></tr>");
             });
 
     }

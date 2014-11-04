@@ -29,7 +29,7 @@ jQuery.support.cors = true;
               // error handler
               log('call to server did not succeed, Status : '+status+ ' Error Message : '+jqXHR.responseText+' Error Thrown : '+errorThrown);
          },
-         timeout: 3000,
+         timeout: 20000,
          crossDomain: true 
 
      });

@@ -34,7 +34,7 @@ h2{
 }
 
 h3{
-  font-size: 40px;
+  font-size: 20px;
   color: #787878;
   font-weight: 400;
   line-height: 24px;
@@ -536,13 +536,14 @@ input.search-form:hover {
 }
 
 #feature {
-background:url('../images/bull.jpg')no-repeat;
+/*background:url('../images/bull.jpg')no-repeat;
+background-size:cover;*/
 width: 100%;
 height: auto;
 background-height: auto;
 background-width: 100%;
 background-position: center top;
-background-size:100% auto;
+background-size:cover;
  /* background: #f2f2f2;*/
   padding-bottom: 40px;
 }

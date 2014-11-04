@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Profile | MMM</title>
+    <title>Profile | Miura Misys Money</title>
 
     <!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link href="js/JUI/jquery-ui.css" rel="stylesheet">
     <link href="js/JUI/jquery-ui.theme.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/miura.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -37,16 +38,10 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <script>
-    var gainTicker = new WBIHorizontalTicker('gainers');
-    gainTicker.start();
+            var gainTicker = new WBIHorizontalTicker('gainers');
+            gainTicker.start();
+        </script><!--
 
-    </script>
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-sm-6 col-xs-4">
-
-                     <div class="top-number"><p><i class="fa fa-phone-square"></i> </p></div>
-                 </div>-->
                 <div class="col-sm-12 col-xs-12">
                     <div class="social">
                         <ul class="social-share">
@@ -65,7 +60,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="container">
             <div class="navbar-header">
@@ -75,28 +70,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="logo"></a>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
                 <a class="navbar-brand" href="profile.html"><img src="images/profile.png" alt="logo"></a>
+                <!--<div class="search">
+                    <form role="form">
+                        <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>-->
             </div>
+
+
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="trade.html">Trade</a></li>
-                    <li><a href="analytics.html">Analytics</a></li>
+                    <li><a href="search.html">Search</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Power Ups <i
                                 class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="blog-item.html">Mini Game 1</a></li>
                             <li><a href="pricing.html">Mini Game 2</a></li>
-                            <li><a href="404.html">Mini Game 3</a></li>
-                            <li><a href="shortcodes.html">Mini Game 4</a></li>
                         </ul>
                     </li>
-                    <li><a href="faq.html">FAQ</a></li>
+
                     <li><a href="contact-us.html">Contact</a></li>
+
                 </ul>
             </div>
         </div>
@@ -109,15 +111,16 @@
 
 <!--/gmap_area -->
 
-<section id="contact-page">
-<div class="container">
+<section id="contact-page" class="profileclass">
+<div class="container" ></br></br></br></br></br></br></br></br>
+<!--
 <div class="row">
     <div class="col-sm-10"><h1>Joeuser</h1></div>
     <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image"
                                                                    class="img-circle img-responsive"
                                                                    src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a>
     </div>
-</div>
+</div>-->
 <div class="row">
 <div class="col-sm-3"><!--left col-->
 
@@ -149,11 +152,11 @@
 <!--/col-3-->
 <div class="col-sm-9">
 
+<!--
 <ul class="nav nav-tabs" id="myTab">
-    <!-- <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-     <li><a href="#messages" data-toggle="tab">Messages</a></li>-->
+
     <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
-</ul>
+</ul>-->
 
 <div class="tab-content">
 <div class="tab-pane" id="home">
@@ -392,22 +395,24 @@
 <footer id="footer" class="midnight-blue">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 &copy; 2014 <a target="_blank" href="http://shapebootstrap.net/"
                                title="Misys Miura Money">Misys Miura Money</a>.
                 All Rights Reserved.
             </div>
-            <div class="col-sm-6">
-                <ul class="pull-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Faq</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+            <div class="col-sm-3">
+                <a class="twitter-share-button" href="https://twitter.com/share"> Tweet </a>
+                <script type="text/javascript">
+                    window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+                    </script>
+            </div>
+            <div class="col-sm-5">
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" colorscheme="light"></div>
             </div>
         </div>
     </div>
-</footer>
+    </div>
+</footer><!--/#footer-->
 <!--/#footer-->
 
 

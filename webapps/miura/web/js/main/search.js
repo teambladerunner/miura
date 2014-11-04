@@ -8,7 +8,14 @@ jQuery(function($) {'use strict',
 		//var data=JSON.stringify({name: "Mozilla"});
 		callServer("PUT",URL.putPrefs,data,function () {populateForm(data)})
 		//alert('End');
-	});	
+	});
+
+	$('#symbolsearch').bind('keyup', function(e) {
+    	    if ( e.keyCode === 13 &&  $(this).val() ){ // 13 is enter key
+    	        loadTrade($(this).val());
+    	    }
+    	});
+
 
 	jQuery('#locale').change(function() {
 		
@@ -80,9 +87,9 @@ jQuery(function($) {'use strict',
         $("#currentChangeAmt").val(data.stock_summary.day_change_amount);
         $("#currentChangePercent").val(data.stock_summary.day_change_percent);
 
-        $("#trend1").val(data.stock_sentiment.probability.neg);
-        $("#trend2").val( data.stock_sentiment.probability.neutral);
-        $("#trend3").val( data.stock_sentiment.probability.pos);
+       // $("#trend1").val(data.stock_sentiment.probability.neg);
+       // $("#trend2").val( data.stock_sentiment.probability.neutral);
+       // $("#trend3").val( data.stock_sentiment.probability.pos);
         data.stock_sentiment.neutral;
     }
 
@@ -96,16 +103,37 @@ jQuery(function($) {'use strict',
 
     loadSearch();
 
+    function loadTrade(stockSymbol){
+    	SESSION.search=stockSymbol;
+    	loadSearch();
+    	//callServer("GET",URL.getTrade + stockSymbol,data,function () {showStockInfo(data)});
+    }
+
+
 });
+
+$(function() {
+
+ $( "#symbolsearch" ).autocomplete({
+     source: STOCK_SYMBOLS,
+     messages: {
+        noResults: '',
+        results: function() {}
+    }
+     });
+
+});
+
 
         function showChart () {
 
 
   			if(typeof(EventSource) !== "undefined") {
-  				var source = new EventSource("http://blrublp136:9000/Miura/sse");
+  				var source = new EventSource(URL.getChart+SESSION.search);
   				source.onmessage = function(event) {
   					var obj = JSON.parse(event.data);
-  					if(obj.type === "stockupdate" && obj.symbol === "GOOGL"){
+  					obj.symbol=SESSION.search;
+  					if(obj.type === "stockupdate" /* && obj.symbol === "GOOGL" */){
   						update(parseFloat(obj.price, 10));
   					}
   				};

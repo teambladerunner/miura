@@ -12,7 +12,7 @@ jQuery(function($) {'use strict',
 
 	$('#trade_btn').click(function() {
 			var data = JSON.stringify(jQuery('#tradeForm').serializeArray())
-	        callServer("GET",URL.getTrade + stockSymbol,data,function () {populateMessage(data)})
+	        callServer("POST",URL.putTrade,data,function () {populateMessage(data)})
 
 	});
 

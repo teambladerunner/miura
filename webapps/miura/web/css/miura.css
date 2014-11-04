@@ -28,3 +28,102 @@ th {
  .ui-autocomplete {
 		max-height: 100px;
 		overflow: hidden; }
+
+
+.portfolioclass {
+background:url('../images/folder.jpg')repeat;
+background-size:cover;
+/*
+width: 100%;
+height: 100%;
+background-height: auto;
+background-width: 100%;
+background-position: center top;
+background-size:100% auto;*/
+ /* background: #f2f2f2;*/
+  /*padding-bottom: 40px;*/
+}
+
+.profileclass {
+background:url('../images/cogs.jpg')no-repeat fixed center;
+background-size:cover;
+/*
+width: 100%;
+height: 100%;
+background-height: auto;
+background-width: 100%;
+background-position: center top;
+background-size:100% auto;*/
+ /* background: #f2f2f2;*/
+  /*padding-bottom: 40px;*/
+}
+
+
+.dashboardmiura {
+background:url('../images/bull.jpg')no-repeat fixed center;
+background-size:cover;
+/*
+width: 100%;
+height: 100%;
+background-height: auto;
+background-width: 100%;
+background-position: center top;
+background-size:100% auto;*/
+ /* background: #f2f2f2;*/
+  /*padding-bottom: 40px;*/
+}
+
+
+.portfoliotable {
+color: #009999;
+/*
+width: 100%;
+height: 100%;
+background-height: auto;
+background-width: 100%;
+background-position: center top;
+background-size:100% auto;*/
+ /* background: #f2f2f2;*/
+  /*padding-bottom: 40px;*/
+}
+
+.portfoliotabletr {
+ background-color: #333366;
+ /*
+ width: 100%;
+ height: 100%;
+ background-height: auto;
+ background-width: 100%;
+ background-position: center top;
+ background-size:100% auto;*/
+  /* background: #f2f2f2;*/
+   /*padding-bottom: 40px;*/
+ }
+
+ .searchclass {
+background:url('../images/search.jpg')no-repeat fixed center;
+background-size:cover;
+ /*
+ width: 100%;
+ height: 100%;
+ background-height: auto;
+ background-width: 100%;
+ background-position: center top;
+ background-size:100% auto;*/
+  /* background: #f2f2f2;*/
+   /*padding-bottom: 40px;*/
+ }
+
+  .chartheader {
+    text:#333366;
+    color:black;
+  /*
+  width: 100%;
+  height: 100%;
+  background-height: auto;
+  background-width: 100%;
+  background-position: center top;
+  background-size:100% auto;*/
+   /* background: #f2f2f2;*/
+    /*padding-bottom: 40px;*/
+  }
