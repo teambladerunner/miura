@@ -26,7 +26,7 @@ var URL = {
    getPort:"http://blrublp136:9000/Miura/user/portfolio",
    getSearch:"http://blrublp136:9000/Miura/stocks/search/",
    getTrade:"http://blrublp136:9000/Miura/stocks/search/",
-   postLogin: "http://blrublp136:9000/Miura/user/",
+   postLogin: "http://blrublp136:9000/Miura/user/login",
    putTrade: "http://blrublp136:9000/Miura/user/portfolio/trades",
    getChart : "http://blrublp136:9000/Miura/sseSymbolFeed/"
 
