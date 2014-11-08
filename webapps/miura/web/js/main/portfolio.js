@@ -28,6 +28,9 @@ jQuery(function($) {'use strict',
                 table.append("<tr class='portfoliotabletr'><td>"+elem.symbol+"</td><td>"+elem.totalUnits+"</td><td>"+elem.averageInvestedPrice+"</td><<td>"+elem.totalPurchasePrice+"</td><td>"+elem.currentMarketPrice+"</td><td>"+elem.currMarketValue+"</td><td>"+elem.realizedProfitAmount+"</td><td>"+elem.realizedProfitPercentage+"</td><td>"+createSellButton(elem.symbol,elem.totalUnits,elem.currentMarketPrice)+"</td></tr>");
             });
 
+         $("#currentcash").val(data1.cash_balance);
+         $("#currentvalue").val(data1.current_value_total);
+
     }
 
     function createSellButton(quoteID,totalUnits,currentMarketPrice){

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Miura Misys Money</title>
-
-    <!-- core CSS -->
+    <title>Account | Miura Misys Money</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.css" rel="stylesheet">
+    <link href="js/JUI/jquery-ui.theme.css" rel="stylesheet">
     <link href="css/miura.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -30,8 +30,8 @@
             type="text/javascript"></script>
     <link href="http://widgets.freestockcharts.com/WidgetServer/WBITickerblue.css" rel="stylesheet" type="text/css"/>
 
-</head><!--/head-->
-
+</head>
+<!--/head-->
 <body>
 
 <header id="header">
@@ -86,11 +86,11 @@
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li class="active"><a href="trade.html">Trade</a></li>
+                    <li><a href="trade.html">Trade</a></li>
                     <li><a href="search.html">Search</a></li>
-                    <li><a href="account.html">Trade History</a></li>
+                    <li  class="active"><a href="account.html">Trade History</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Power Ups <i
                                 class="fa fa-angle-down"></i></a>
@@ -110,92 +110,122 @@
     <!--/nav-->
 
 </header>
+<!--/header-->
+<section id="portfolio" class="portfolioclass"></br></br></br></br></br>
+    <div class="container">
+<!--
+        <div class="row">
+            <div class="col-sm-12">
 
-    <section id="trade" class="trade-content">
-        <div class="container"><br><br><br><br><br><br><br>
-            <div class="row text-center">
-                <div class="col-sm-12 well wow fadeInDown">
-                            <h3>Make A Trade</h3>
+
+                <span class="label label-info" id = "preturnsp">Portfolio Returns (%) : 2</span>
+                <span class="label label-info" id = "preturnsamt">Portfolio Returns (Amount) : 200</span>
+
+            </div>
+        </div>-->
+
+        <div class="row">
+            <div class="col-sm-12">
+<!--
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active"><a href="#home" data-toggle="tab">Portfolio</a></li>
+
+                </ul>-->
+                </br>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Quote ID</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Buy/Sell</th>
+                                    <th>Date</th>
+
+                                </tr>
+                                </thead>
+                                <tbody id="items" class="portfoliotable">
+                                <!--
+                                <tr class="portfoliotabletr">
+                                    <td>AMZ</td>
+                                    <td>2</td>
+                                    <td>100</td>
+                                    <td>200</td>
+                                    <td>300</td>
+                                    <td>200</td>
+                                    <td>20</td>
+                                    <td>2%</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-danger">Sell</button>
+                                    </td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                            <!--
                             <hr>
 
-                    <form class="well" id="tradeForm">
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="symbol" id="symbol">
-                            <div class="input-group-btn">
-                                <a href="" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>
-                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4 text-center">
+                                    <ul class="pagination" id="myPager"></ul>
+                                </div>
+                            </div>-->
                         </div>
+                        <!--/table-resp-->
 
-                        <div class="selected-stock row" id="current-stock">
-                        </div>
                         <hr>
 
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <select class="combobox" name="buy_sell" id="buy_sell">
-                                    <option value="B">BUY </option>
-                                    <option value="S">SELL</option>
-                                </select>
 
-                            </div>
-                            <div class="col-sm-4">
-                                <label> &nbsp;Number of Stocks  &nbsp; </label>
-                                <input type="text" id="units" name="units" placeholder="0">
-                            </div>
-                            <div class="col-sm-4">
-                                <label> &nbsp; * &nbsp; Est. Price  &nbsp; &nbsp;</label>
-                                <input type="text" id="rate" name="rate" placeholder="0">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <a href="#" id="trade_btn" class="btn btn-primary">Trade for a total of
-                                <span id="total">0.00</span> $</a>
-                            </div>
-                        </div>
-                     </form>
+                    </div>
+                    <!--/tab-pane-->
+
+
                 </div>
-
-                 <div id="success-msg">
-                 </div>
-
+                <!--/tab-pane-->
             </div>
-
+            <!--/tab-content-->
         </div>
-    </section><!--/#feature-->
+        <!--/row-->
 
-    <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    &copy; 2014 <a target="_blank" href="http://www.misys.com"
-                                   title="Misys Miura Money">Misys Miura Money</a>.
-                    All Rights Reserved.
-                </div>
-                <div class="col-sm-3">
-                    <a class="twitter-share-button" href="https://twitter.com/share"> Tweet </a>
-                    <script type="text/javascript">
+
+
+        </br></br></br></br></br></br>
+
+    </div>
+</section>
+<!--/#portfolio-item-->
+
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                &copy; 2014 <a target="_blank" href="http://www.misys.com"
+                               title="Misys Miura Money">Misys Miura Money</a>.
+                All Rights Reserved.
+            </div>
+            <div class="col-sm-3">
+                <a class="twitter-share-button" href="https://twitter.com/share"> Tweet </a>
+                <script type="text/javascript">
                     window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
                     </script>
-                </div>
-                <div class="col-sm-5">
-                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" colorscheme="light"></div>
-                    </div>
-                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" colorscheme="light"></div>
             </div>
         </div>
-    </footer><!--/#footer-->
+    </div>
+    </div>
+</footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/jquery-ui-1.10.4.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main/includes.js"></script>
-    <script src="js/main/trade.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/main/includes.js"></script>
+<script src="js/main/account.js"></script>
 </body>
 </html>

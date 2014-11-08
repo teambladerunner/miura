@@ -1,6 +1,7 @@
 function redirect(){	
+	var dataReturned = SESSION.response;
     setCookie(dataReturned);
-    window.location.href = "http://localhost:8080/miura/web/index.html";
+    window.location.href = "http://localhost:8081/miura/web/index.html";
 }
 
 var Login = function () {

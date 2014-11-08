@@ -1,8 +1,8 @@
 //constants stuff
 
 var DEBUG = {
-   isDebugEnabled:true,
-   isDebugAlertEnabled:true
+   isDebugEnabled:false,
+   isDebugAlertEnabled:false
 }
 
 var SESSION = {
@@ -20,15 +20,16 @@ var SESSION = {
 }
 
 var URL = {
-   putPrefs:"http://blrublp136:9000/Miura/user",
-   getPrefs:"http://blrublp136:9000/Miura/user/profile",
-   putPort:"http://blrublp136:9000/Miura/user",
-   getPort:"http://blrublp136:9000/Miura/user/portfolio",
-   getSearch:"http://blrublp136:9000/Miura/stocks/search/",
-   getTrade:"http://blrublp136:9000/Miura/stocks/search/",
-   postLogin: "http://blrublp136:9000/Miura/user/login",
-   putTrade: "http://blrublp136:9000/Miura/user/portfolio/trades",
-   getChart : "http://blrublp136:9000/Miura/sseSymbolFeed/"
+   putPrefs:"http://blrublp136:8080/Miura/user",
+   getPrefs:"http://blrublp136:8080/Miura/user/profile",
+   putPort:"http://blrublp136:8080/Miura/user",
+   getPort:"http://blrublp136:8080/Miura/user/portfolio",
+   getSearch:"http://blrublp136:8080/Miura/stocks/search/",
+   getTrade:"http://blrublp136:8080/Miura/stocks/search/",
+   postLogin: "http://blrublp136:8080/Miura/user/login",
+   putTrade: "http://blrublp136:8080/Miura/user/portfolio/trades",
+   getChart : "http://blrublp136:8080/Miura/sseSymbolFeed/",
+   getAccount:"http://blrublp136:8080/Miura/user/portfolio/trades"
 
 }
 
