@@ -17,23 +17,27 @@ jQuery(function($) {'use strict',
 	});
 
 	$('#units').change(function() {
-			var stockUnits = $(this).val();
-			var currPrice = $('#rate').val();
-			if(stockUnits > 0 && currPrice > 0) {
-				document.getElementById('total').innerText = stockUnits * currPrice;
+			var stockUnits = parseInt($(this).val());
+			var currPrice = parseInt($('#rate').val());
+			if(isNaN(stockUnits) || isNaN(currPrice) ){
+				$('#total').text(0.00);
+			} else if(stockUnits > 0 && currPrice > 0) {
+				$('#total').text(stockUnits * currPrice);
 			}else{
-				document.getElementById('total').innerText= 0.00;
+				$('#total').text(0.00);
 			}
 
 	});
 
 	$('#rate').change(function() {
-			var stockUnits = $(this).val();
-			var currPrice = $('#units').val();
-			if(stockUnits > 0 && currPrice > 0) {
-				document.getElementById('total').innerText = stockUnits * currPrice;
+			var stockUnits = parseInt($(this).val());
+			var currPrice = parseInt($('#units').val());
+			if(isNaN(stockUnits) || isNaN(currPrice) ){
+				$('#total').text(0.00);
+			} else if(stockUnits > 0 && currPrice > 0) {
+				$('#total').text(stockUnits * currPrice);
 			}else{
-				document.getElementById('total').innerText= 0.00;
+				$('#total').text(0.00);
 			}
 
 	});

@@ -71,8 +71,10 @@ function prefLocalization(){
 
 function setCookie(data){
 	var cookieStr = JSON.stringify(data);
-	$.cookie(data.authid, cookieStr);
-
+	var date = new Date();
+	//expire in 5 mins
+	date.setTime(date.getTime() + (5 * 60 * 1000));
+	$.cookie(data.authid, cookieStr, { expires: date });
 }
 
 function getCookie(authid){
