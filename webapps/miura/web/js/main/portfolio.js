@@ -42,6 +42,7 @@ jQuery(function($) {'use strict',
 
 
     function loadPortfolio(){
+        checkLoggedIn();
         var data={};
         callServer("GET",URL.getPort,data,function () {populatePortfolio(data)})
     }
@@ -50,6 +51,7 @@ jQuery(function($) {'use strict',
 
 
 });
+
 
 
    function setTrade(quoteID){

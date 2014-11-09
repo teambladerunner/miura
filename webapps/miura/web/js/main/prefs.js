@@ -23,6 +23,7 @@ jQuery(function($) {'use strict',
 
 
 function loadPrefs(){
+    checkLoggedIn();
 	var data={};
 	callServer("GET",URL.getPrefs,data,function () {populateForm(data)})
 }

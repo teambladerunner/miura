@@ -95,6 +95,7 @@ jQuery(function($) {'use strict',
 
 
     function loadSearch(){
+        checkLoggedIn();
         showChart();
         var data={};
         var quoteID = SESSION.search;
@@ -104,6 +105,7 @@ jQuery(function($) {'use strict',
     loadSearch();
 
     function loadTrade(stockSymbol){
+
     	SESSION.search=stockSymbol;
     	loadSearch();
     	//callServer("GET",URL.getTrade + stockSymbol,data,function () {showStockInfo(data)});

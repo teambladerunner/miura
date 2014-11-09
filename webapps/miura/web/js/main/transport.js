@@ -1,6 +1,6 @@
 //Ajax Calls to server or third party
 
-function callServer( type,  url,  data, functionSuccess ){
+function callServer( type,  url,  data, functionSuccess,functionError ){
 
 jQuery.support.cors = true;
 
@@ -28,6 +28,8 @@ jQuery.support.cors = true;
          error: function (jqXHR, status, errorThrown) {           
               // error handler
               log('call to server did not succeed, Status : '+status+ ' Error Message : '+jqXHR.responseText+' Error Thrown : '+errorThrown);
+              //showMessage("Server Error, Check Logs for more information","ERROR");
+              functionError();
          },
          timeout: 5000,
          crossDomain: true 

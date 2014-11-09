@@ -14,22 +14,26 @@ var SESSION = {
    totalUnits: null,
    currentMarketPrice: null,
    transaction: 'eeeee',
-   search:'GOOGL'
+   search:'GOOGL',
+   mode:"secure"
 
 
 }
 
 var URL = {
-   putPrefs:"http://blrublp136:8080/Miura/user",
-   getPrefs:"http://blrublp136:8080/Miura/user/profile",
-   putPort:"http://blrublp136:8080/Miura/user",
-   getPort:"http://blrublp136:8080/Miura/user/portfolio",
-   getSearch:"http://blrublp136:8080/Miura/stocks/search/",
-   getTrade:"http://blrublp136:8080/Miura/stocks/search/",
-   postLogin: "http://blrublp136:8080/Miura/user/login",
-   putTrade: "http://blrublp136:8080/Miura/user/portfolio/trades",
-   getChart : "http://blrublp136:8080/Miura/sseSymbolFeed/",
-   getAccount:"http://blrublp136:8080/Miura/user/portfolio/trades"
+   putPrefs:"http://localhost:9000/Miura/user",
+   getPrefs:"http://localhost:9000/Miura/user/profile",
+   putPort:"http://localhost:9000/Miura/user",
+   getPort:"http://localhost:9000/Miura/user/portfolio",
+   getSearch:"http://localhost:9000/Miura/stocks/search/",
+   getTrade:"http://localhost:9000/Miura/stocks/search/",
+   postLogin: "http://localhost:9000/Miura/user/login",
+   putTrade: "http://localhost:9000/Miura/user/portfolio/trades",
+   getChart : "http://localhost:9000/Miura/sseSymbolFeed/",
+   getAccount:"http://localhost:9000/Miura/user/portfolio/trades",
+   dashboard : "http://localhost:8080/miuraclient/web/index.html",
+   login : "http://localhost:8080/miuraclient/web/login.html",
+   putUser : "http://localhost:9000/Miura/user"
 
 }
 

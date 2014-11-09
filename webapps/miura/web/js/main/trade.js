@@ -1,4 +1,5 @@
 function loadTrade(stockSymbol){
+    checkLoggedIn();
 	var data={};
 	callServer("GET",URL.getTrade + stockSymbol,data,function () {showStockInfo(data)});
 }

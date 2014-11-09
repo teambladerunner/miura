@@ -24,6 +24,7 @@ jQuery(function($) {'use strict',
         }
 
     function loadAccount(){
+        checkLoggedIn();
         var data={};
         callServer("GET",URL.getAccount,data,function () {populateAccount(data)})
     }

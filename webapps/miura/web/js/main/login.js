@@ -1,8 +1,20 @@
 function redirect(){	
 	var dataReturned = SESSION.response;
     setCookie(dataReturned);
-    window.location.href = "http://localhost:8081/miura/web/index.html";
+    showMessage("Login Success","INFORMATION");
+
+    window.location.href = URL.dashboard;
 }
+
+function loginError(){
+    showMessage("User Name/Password incorrect","ERROR");
+}
+
+function emailSent(){
+    showMessage("Email is sent to your registered address","INFORMATION");
+}
+
+
 
 var Login = function () {
 
@@ -53,7 +65,7 @@ var Login = function () {
 	            submitHandler: function (form) {
 	                //form.submit();
 	                var data = JSON.stringify(jQuery('#login-form').serializeArray());	                
-	                callServer("PUT",URL.postLogin,data,function () {redirect()});	                
+	                callServer("PUT",URL.postLogin,data,function () {redirect()}, function () {loginError()});
 	            }
 	        });
 
@@ -105,7 +117,10 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                form.submit();
+	                //form.submit();
+                var data = JSON.stringify(jQuery('#forget-form').serializeArray());
+                //callServer("POST",URL.putUser,data,function () {emailSent()});
+                emailSent();
 	            }
 	        });
 
@@ -162,36 +177,17 @@ var Login = function () {
 	            ignore: "",
 	            rules: {
 	                
-	                fullname: {
-	                    required: true
-	                },
-	                email: {
-	                    required: true,
-	                    email: true
-	                },
-	                address: {
-	                    required: true
-	                },
-	                city: {
-	                    required: true
-	                },
-	                country: {
-	                    required: true
-	                },
 
-	                username: {
+	                email: {
 	                    required: true
 	                },
 	                password: {
 	                    required: true
 	                },
-	                rpassword: {
+	                password2: {
 	                    equalTo: "#register_password"
-	                },
-
-	                tnc: {
-	                    required: true
 	                }
+
 	            },
 
 	            messages: { // custom messages for radio buttons and checkboxes
@@ -225,7 +221,9 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                form.submit();
+	                //form.submit();
+                var data = JSON.stringify(jQuery('#register-form').serializeArray());
+                callServer("POST",URL.putUser,data,function () {redirect()}, function () {loginError()});
 	            }
 	        });
 
