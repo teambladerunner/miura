@@ -98,8 +98,11 @@ jQuery(function($) {'use strict',
         checkLoggedIn();
         showChart();
         var data={};
-        var quoteID = SESSION.search;
-        callServer("GET",URL.getSearch+quoteID,data,function () {populateSearchForm(data)})
+		if (SESSION.search)
+		{
+			var quoteID = SESSION.search;
+			callServer("GET",URL.getSearch+quoteID,data,function () {populateSearchForm(data)})
+		}
     }
 
     loadSearch();

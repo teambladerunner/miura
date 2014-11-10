@@ -14,6 +14,7 @@ jQuery(function($) {'use strict',
 });*/
 
     function populateAccount(data){
+	checkLoggedIn();
         var data1=SESSION.response;
         data= data1.userTrades;
         var table = $("#items");
@@ -24,12 +25,13 @@ jQuery(function($) {'use strict',
         }
 
     function loadAccount(){
-        checkLoggedIn();
+      
         var data={};
         callServer("GET",URL.getAccount,data,function () {populateAccount(data)})
     }
 
-     loadAccount();
+   //checkLoggedIn();   
+loadAccount();   
 
 
 

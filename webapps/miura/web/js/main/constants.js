@@ -7,33 +7,33 @@ var DEBUG = {
 
 var SESSION = {
    locale:false,
-   authID : "zubin",
+   authID : null,
    other:false,
    response : null,
    quoteID: null,
    totalUnits: null,
    currentMarketPrice: null,
    transaction: 'eeeee',
-   search:'GOOGL',
+   search:null,
    mode:"secure"
 
 
 }
 
 var URL = {
-   putPrefs:"http://localhost:9000/Miura/user",
-   getPrefs:"http://localhost:9000/Miura/user/profile",
-   putPort:"http://localhost:9000/Miura/user",
-   getPort:"http://localhost:9000/Miura/user/portfolio",
-   getSearch:"http://localhost:9000/Miura/stocks/search/",
-   getTrade:"http://localhost:9000/Miura/stocks/search/",
-   postLogin: "http://localhost:9000/Miura/user/login",
-   putTrade: "http://localhost:9000/Miura/user/portfolio/trades",
-   getChart : "http://localhost:9000/Miura/sseSymbolFeed/",
-   getAccount:"http://localhost:9000/Miura/user/portfolio/trades",
+   putPrefs:"http://localhost:8080/Miura/user",
+   getPrefs:"http://localhost:8080/Miura/user/profile",
+   putPort:"http://localhost:8080/Miura/user",
+   getPort:"http://localhost:8080/Miura/user/portfolio",
+   getSearch:"http://localhost:8080/Miura/stocks/search/",
+   getTrade:"http://localhost:8080/Miura/stocks/search/",
+   postLogin: "http://localhost:8080/Miura/user/login",
+   putTrade: "http://localhost:8080/Miura/user/portfolio/trades",
+   getChart : "http://localhost:8080/Miura/sseSymbolFeed/",
+   getAccount:"http://localhost:8080/Miura/user/portfolio/trades",
    dashboard : "http://localhost:8080/miuraclient/web/index.html",
    login : "http://localhost:8080/miuraclient/web/login.html",
-   putUser : "http://localhost:9000/Miura/user"
+   putUser : "http://localhost:8080/Miura/user"
 
 }
 

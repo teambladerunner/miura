@@ -98,13 +98,19 @@ function setCookie(data){
 
 function getCookie(authid){
 	var cookieDataStr = $.cookie(authid);
-	var cookieData = JSON.parse(cookieDataStr);
+	var cookieData=null;
+	if (cookieDataStr){
+		cookieData = JSON.parse(cookieDataStr);
+	}
 	return cookieData;
 }
 
 function getAuthIDFromCookie(){
 	var data = getCookie("miura");
-	var authID = data.authid;
+	var authID=null;
+	if (data){
+		authID = data.authid;
+	}
 	return authID;
 }
 
@@ -114,7 +120,7 @@ function checkLoggedIn(){
         if (SESSION.authID){
             log("Login Successful");
         }else{
-            alert("No");
+
             showMessage("No Session, Please login again");
             window.location.href = URL.login;
         }

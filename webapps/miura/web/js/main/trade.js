@@ -1,8 +1,9 @@
 function loadTrade(stockSymbol){
-    checkLoggedIn();
+    
 	var data={};
 	callServer("GET",URL.getTrade + stockSymbol,data,function () {showStockInfo(data)});
 }
+checkLoggedIn();
 
 jQuery(function($) {'use strict',
 	$('#symbol').bind('keyup', function(e) {
