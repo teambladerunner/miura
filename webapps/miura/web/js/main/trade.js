@@ -13,8 +13,8 @@ jQuery(function($) {'use strict',
 	});
 
 	$('#trade_btn').click(function() {
-			var data = JSON.stringify(jQuery('#tradeForm').serializeArray())
-	        callServer("POST",URL.putTrade,data,function () {populateMessage(data)})
+			var data = JSON.stringify(jQuery('#tradeForm').serializeArray());
+	        callServer("POST",URL.putTrade,data,function () {populateSuccess(data)}, function () { populateError(data)});
 
 	});
 
@@ -60,33 +60,33 @@ $(function() {
 function showStockInfo (data) {
 	var data= SESSION.response;
 	var htmlText = '';
-	//document.getElementById('legend').innerHTML = '';
- 	$.each(data, function(name, val){
-		//var $el = $('[name="'+name+'"]'),
-   		var $el = $('[name="'+val.name+'"]'),
+	if(data.stock_summary != null) {
+		$('#rate').val(data.stock_summary.current_price);
+		$('#units').val(0);
+		htmlText = '<div class="quote stock-summary"> <div class="symbol-name"> <a href="#" style="cursor: default;"> <div class="symbol">' + data.symbol + '</div> </a> </div> <div class="data"> <div class="price"> $ ' + Math.floor(data.stock_summary.current_price * 100)/100 + '/Share  </div> <div class="change up"> <span class="dollar"> $ ' + Math.floor(data.stock_summary.day_change_amount * 100)/100 + '</span> <span class="percent">(' + Math.floor(data.stock_summary.day_change_percent * 100)/100 + '%)</span> </div> </div> </div>';	
+		$('#current-stock').html(htmlText);
+	}else{
+		$('#current-stock').text(htmlText);
+	}	
+}
 
-   		type =  $el.attr('type');
+function reset(){
+	$('#rate').val(0);
+	$('#units').val(0);
+	$('#current-stock').html('');
+	$('#symbol').val('');
+}
 
-	    switch(type){
-	        case 'checkbox':
-	            $el.attr('checked', 'checked');
-	            break;
-	        case 'radio':
-	            $el.filter('[value="'+val+'"]').attr('checked', 'checked');
-	            break;
-	        default:
-	            $el.val(val.value);
-		}
-	});
- 	document.getElementById('current-stock').innerHTML = htmlText;
+function populateSuccess(data) {
+	var data= SESSION.response;	
+	var htmlText = 'Congratulations! You just placed a ' + $('#buy_sell option:selected').text() + 'market order for ' + $('#units').val() + ' stocks of ' + $('#symbol').val() + ' for $ ' + + $('#rate').val();	
+	showMessage(htmlText, "INFORMATION");
+	reset();
+}
 
-    }
-
-function populateMessage(data) {
-	var data= SESSION.response;
-	var htmlText = '';
-	$.each(data, function(name, val){
-	});
-	document.getElementById('success-msg').innerHTML = htmlText;
-
+function populateError(data) {
+	var data= SESSION.response;	
+	var htmlText = 'Error: ';	
+	//TODO: Get error message syntax
+	showMessage(htmlText, "ERROR");	
 }

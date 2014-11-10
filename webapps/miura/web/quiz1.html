@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Trade | Miura Misys Money</title>
+    <title>Quiz 1 | Miura Misys Money</title>
 
     <!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/miura.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/prettyPhoto.css" rel="stylesheet"/>
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+    <link href="css/quiz.css"rel="stylesheet"/>
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -88,14 +88,14 @@
                 <ul class="nav navbar-nav">
                     <li ><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li class="active"><a href="trade.html">Trade</a></li>
+                    <li><a href="trade.html">Trade</a></li>
                     <li><a href="search.html">Search</a></li>
                     <li><a href="account.html">Trade History</a></li>
-                    <li class="dropdown">
+                    <li class="active" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Power Ups <i
                                 class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="quiz1.html">Quiz 1</a></li>
+                            <li class="active"><a href="quiz1.html">Quiz 1</a></li>
                             <li><a href="quiz2.html">Quiz 2</a></li>
                         </ul>
                     </li>
@@ -113,61 +113,14 @@
 
 </header>
 
-    <section id="trade" class="trade-content">
-        <div class="container"><br><br><br><br><br><br><br>
-            <div class="row text-center">
-                <div class="col-sm-12 well wow fadeInDown">
-                            <h3>Make A Trade</h3>
-                            <hr>
-
-                    <form class="well" id="tradeForm">
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="symbol" id="symbol">
-                            <div class="input-group-btn">
-                                <a href="" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="selected-stock row" id="current-stock">
-                        </div>
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <select class="combobox" name="buy_sell" id="buy_sell">
-                                    <option value="B">BUY </option>
-                                    <option value="S">SELL</option>
-                                </select>
-
-                            </div>
-                            <div class="col-sm-4">
-                                <label> &nbsp;Number of Stocks  &nbsp; </label>
-                                <input type="text" id="units" name="units" placeholder="0">
-                            </div>
-                            <div class="col-sm-4">
-                                <label> &nbsp; x &nbsp; Est. Price  &nbsp; &nbsp;</label>
-                                <input type="text" id="rate" name="rate" placeholder="0">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <a href="#" id="trade_btn" class="btn btn-primary">Trade for a total of
-                                <span id="total">0.00</span> $</a>
-                            </div>
-                        </div>
-                     </form>
-                </div>
-
-                 <div id="success-msg">
-                 </div>
-
-            </div>
-
-        </div>
-    </section><!--/#feature-->
-
+	<div id="topbar">Miura Quiz</div>
+	<br><br><br><br><br><br><br><br>
+		<div class="spacer"></div>
+		<div id="navContent">
+		<div id="game1"></div>
+		<div id="game2"></div>
+	</div>
+    
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -198,6 +151,6 @@
     <script src="js/main.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main/includes.js"></script>
-    <script src="js/main/trade.js"></script>
+    <script src="js/main/controller.js"></script>
 </body>
 </html>

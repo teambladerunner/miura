@@ -29,7 +29,9 @@ jQuery.support.cors = true;
               // error handler
               log('call to server did not succeed, Status : '+status+ ' Error Message : '+jqXHR.responseText+' Error Thrown : '+errorThrown);
               //showMessage("Server Error, Check Logs for more information","ERROR");
-              functionError();
+			  if (typeof functionError != 'undefined'){
+				functionError();
+			  }
          },
          timeout: 5000,
          crossDomain: true 

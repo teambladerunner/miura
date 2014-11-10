@@ -87,9 +87,9 @@ jQuery(function($) {'use strict',
         $("#currentChangeAmt").val(data.stock_summary.day_change_amount);
         $("#currentChangePercent").val(data.stock_summary.day_change_percent);
 
-       // $("#trend1").val(data.stock_sentiment.probability.neg);
-       // $("#trend2").val( data.stock_sentiment.probability.neutral);
-       // $("#trend3").val( data.stock_sentiment.probability.pos);
+        $("#trend1").val(data.stock_sentiment.label);
+        $("#trend2").val( data.stock_sentiment.probability.pos);
+        $("#trend3").val( data.stock_sentiment.probability.neg);
         data.stock_sentiment.neutral;
     }
 

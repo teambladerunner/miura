@@ -1,0 +1,65 @@
+{"quizlist":[
+  
+	{
+	"question":"Which of the following cities does NOT have a formal stock exchange?",
+	"option3":"Frankfurt",
+	"option2":"London",
+	"option1":"Monte Carlo"
+	},
+	{
+	"question":"Which of the following might be a reason for a stock market to lose value suddenly?",
+	"option3":"A big company going bankrupt",
+	"option2":"A terrorist attack",
+	"option1":"Both of these"
+	},
+	{
+	"question":"Which of the following might you see roaming a stock market?",
+	"option3":"Goats",
+	"option2":"Mice",
+	"option1":"Bulls"
+	},
+	{
+	"question":"The FTSE 100 index is used to measure stock market performance in which country?",
+	"option3":"France",
+	"option2":"Germany",
+	"option1":"United Kingdom"
+	},
+	{
+	"question":"Where's the oldest stock exchange in the world?",
+	"option3":"Toulouse, France",
+	"option2":"Barcelona, Spain",
+	"option1":"Amsterdam Stock Exchange"
+	},
+	{
+	"question":"Where was the first stock exchange in the United States?",
+	"option3":"Boston, Mass.",
+	"option2":"New York, N.Y.",
+	"option1":"Philadelphia, Pa."
+	},
+	{
+	"question":"What's the name for the method of communications used by stock traders frantically running around a trading floor and using hand signals?",
+	"option3":"verbal auction",
+	"option2":"hand dealing",
+	"option1":"open outcry"
+	},
+	{
+	"question":"What was the first listed company on the NYSE?",
+	"option3":"Nationwide Insurance",
+	"option2":"Prudential",
+	"option1":"Bank of New York"
+	},
+	{
+	"question":"Which of the following is an example of a defensive stock?",
+	"option3":" a weapons manufacturer ",
+	"option2":" an auto manufacturer ",
+	"option1":"a utility company "
+	},	
+	{
+	"question":"What does it mean when a trader flashes four fingers parallel to the floor, palm out?",
+	"option3":"sell four shares",
+	"option2":" buy four shares",
+	"option1":"sell nine shares"
+	}		
+
+]
+}

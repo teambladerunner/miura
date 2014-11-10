@@ -21,20 +21,20 @@ var SESSION = {
 }
 
 var URL = {
-   putPrefs:"http://localhost:8080/Miura/user",
-   getPrefs:"http://localhost:8080/Miura/user/profile",
-   putPort:"http://localhost:8080/Miura/user",
-   getPort:"http://localhost:8080/Miura/user/portfolio",
-   getSearch:"http://localhost:8080/Miura/stocks/search/",
-   getTrade:"http://localhost:8080/Miura/stocks/search/",
-   postLogin: "http://localhost:8080/Miura/user/login",
-   putTrade: "http://localhost:8080/Miura/user/portfolio/trades",
-   getChart : "http://localhost:8080/Miura/sseSymbolFeed/",
-   getAccount:"http://localhost:8080/Miura/user/portfolio/trades",
-   dashboard : "http://localhost:8080/miuraclient/web/index.html",
-   login : "http://localhost:8080/miuraclient/web/login.html",
-   putUser : "http://localhost:8080/Miura/user"
-
+   putPrefs:"http://blrcswhkthn0012:8080/Miura/user",
+   getPrefs:"http://blrcswhkthn0012:8080/Miura/user/profile",
+   putPort:"http://blrcswhkthn0012:8080/Miura/user",
+   getPort:"http://blrcswhkthn0012:8080/Miura/user/portfolio",
+   getSearch:"http://blrcswhkthn0012:8080/Miura/stocks/search/",
+   getTrade:"http://blrcswhkthn0012:8080/Miura/stocks/search/",
+   postLogin: "http://blrcswhkthn0012:8080/Miura/user/login",
+   putTrade: "http://blrcswhkthn0012:8080/Miura/user/portfolio/trades",
+   getChart : "http://blrcswhkthn0012:8080/Miura/sseSymbolFeed/",
+   getAccount:"http://blrcswhkthn0012:8080/Miura/user/portfolio/trades",
+   dashboard : "http://blrcswhkthn0012:8080/miuraclient/web/index.html",
+   login : "http://blrcswhkthn0012:8080/miuraclient/web/login.html",
+   putUser : "http://blrcswhkthn0012:8080/Miura/user",
+   bumpUpLevel: "http://blrcswhkthn0012:8080/Miura/user/profile/level"
 }
 
 
